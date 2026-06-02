@@ -125,35 +125,45 @@
                         },
                     },
                 },
-            });
+            }); 
 
-new Chart(document.getElementById("GraficoPie"), {
-                type: "pie",
+new Chart(document.getElementById("Graficodona"), {
+                type: "doughnut",
                 data: {
-                    labels: ["Región Metropolitana", "Resto del país"],
+                    labels: [
+                        "RM – Excelencia (6-7 años)",
+                        "RM – Avanzado (4-5 años)",
+                        "RM – Básico (3 años)",
+                        "Regiones – Excelencia (6-7 años)",
+                        "Regiones – Avanzado (4-5 años)",
+                    ],
                     datasets: [
                         {
-                            data: [1776, 778],
+                            data: [995, 571, 210, 488, 290],
                             backgroundColor: [
-                                "rgba(232, 87, 26, 0.85)",
-                                "rgba(64, 64, 64, 0.75)",
+                                "rgba(232, 87, 26, 0.90)",
+                                "rgba(232, 87, 26, 0.55)",
+                                "rgba(232, 87, 26, 0.25)",
+                                "rgba(64, 64, 64, 0.80)",
+                                "rgba(64, 64, 64, 0.45)",
                             ],
-                            borderColor: ["#fefefe", "#fefefe"],
+                            borderColor: "#fefefe",
                             borderWidth: 2,
                         },
                     ],
                 },
                 options: {
+                    cutout: "60%",
                     plugins: {
                         legend: {
                             display: true,
                             position: "bottom",
                             labels: {
-                                font: { family: "'Georama', sans-serif", size: 12 },
+                                font: { family: "'Georama', sans-serif", size: 11 },
                                 color: "#404040",
-                                padding: 20,
+                                padding: 16,
                                 usePointStyle: true,
-                                pointStyleWidth: 12,
+                                pointStyleWidth: 10,
                             },
                         },
                         tooltip: {
